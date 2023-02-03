@@ -1,19 +1,23 @@
 <template lang="">
   <div class="list-group">
-    <a
-      href="#"
+    <router-link
+      :to="`/pokemon/${pokemon.name}`"
       v-for="pokemon of pokemonsList"
       :key="pokemon.name"
       class="list-group-item list-group-item-action"
     >
       {{ pokemon.name }}
-    </a>
+    </router-link>
   </div>
 </template>
 <script setup>
-import { ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { PokemonService } from "/src/core/services";
 const pokemonsList = ref([]);
+
+onMounted(() => {
+  loadData();
+});
 
 // methods
 const loadData = async () => {
@@ -24,7 +28,5 @@ const loadData = async () => {
     console.error(error);
   }
 };
-
-loadData();
 </script>
 <style lang=""></style>

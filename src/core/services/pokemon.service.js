@@ -7,4 +7,9 @@ export class PokemonService {
         const { data } = await axios.get(url);
         return data;
     }
+    static async getByName({ name }) {
+        const url = `${base}/${name}`;
+        const { data } = await axios.get(url);
+        return data;
+    }
 }
