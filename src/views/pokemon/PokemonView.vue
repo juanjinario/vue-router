@@ -1,5 +1,14 @@
 <template lang="">
-  <div>Aqui esta tu cualquier pokemon</div>
+  <div class="list-group">
+    <a
+      href="#"
+      v-for="pokemon of pokemonsList"
+      :key="pokemon.name"
+      class="list-group-item list-group-item-action"
+    >
+      {{ pokemon.name }}
+    </a>
+  </div>
 </template>
 <script setup>
 import { ref } from "vue";
