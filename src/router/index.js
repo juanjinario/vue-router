@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   // Esto es para evitar el #, que era de versiones anteriores
@@ -13,14 +13,14 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
-      component: () => import('../views/AboutView.vue')
+      component: () => import("../views/AboutView.vue"),
     },
     {
       path: "/pokemon",
       name: "pokemon",
-      component: () => import('../views/PokemonView.vue')
+      component: () => import("../views/PokemonView.vue"),
     },
-  ],
-});
+  ]
+} );
 
 export default router;
